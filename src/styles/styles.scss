@@ -26,3 +26,15 @@ $primary: $green;
   border-color: $green;
   box-shadow: 0 0 0 0.3rem rgba(40, 167, 69, 0.25);
 }
+
+.ItemDetailCard img{
+  align-self: center;
+  max-width: 22rem;
+}
+nav{
+  .brand-text{
+    @media screen and (max-width: 576px) {
+      display: none;  
+    }
+  }
+}

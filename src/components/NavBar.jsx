@@ -1,9 +1,9 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import Navbar from 'react-bootstrap/Navbar';
 import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
 import CartWidget from './CartWidget';
 import { Link } from "react-router-dom";
 
@@ -13,14 +13,16 @@ const NavBar = () => {
     <Navbar className="mx-1 justify-content-center" bg="light" expand="lg">
       <Container fluid className="mx-5">
         <Navbar.Brand href="">
-            <img
-              alt="website brand"
-              src="/logo.png"
-              width="90"
-              height="50"
-              className="d-inline-block align-center"
-            />
-            <Link to='/' className='text-decoration-none text-reset'>LaptopShopping.com</Link>
+            <Link to='/'>
+              <img
+                alt="website brand"
+                src="/logo.png"
+                width="90"
+                height="50"
+                className="d-inline-block align-center"
+              />
+            </Link>
+            <Link to='/' className='text-decoration-none text-reset brand-text'>LaptopShopping.com</Link>
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

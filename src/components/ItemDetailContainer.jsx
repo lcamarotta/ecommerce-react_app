@@ -1,1 +1,0 @@
-//Crea tu componente ItemDetailContainer con la misma premisa que ItemListContainer.

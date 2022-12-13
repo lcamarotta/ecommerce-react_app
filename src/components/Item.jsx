@@ -1,10 +1,9 @@
-// Item.js: Es un componente destinado a mostrar información breve del producto que
-// el user clickeará luego para acceder a los detalles (los desarrollaremos más adelante)
-import { Col } from 'react-bootstrap';
-import Button from 'react-bootstrap/Button';
+//	Item.js renders a card for each received item.
+//	Each card displays brief information only.
+//	Each card also contains a button to view ItemDetail
+import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
-
+import Button from 'react-bootstrap/Button';
 
 const Item = ({ title, price, thumbnail }) => {
 	return (

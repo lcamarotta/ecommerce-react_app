@@ -1,27 +1,18 @@
-// ItemList.js Es un agrupador de un set de componentes Item.js
-// (Deberías incluirlo dentro de ItemListContainer de la primera pre-entrega del Proyecto Final)
-import { useState, useEffect } from 'react';
-import { data } from '../utils/data';
-import { fetchData } from '../utils/fetchData';
+//  Group received cards from <Item/>
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import Item from './Item';
 
-const ItemList = () => {
-	const [dataArray, setDataArray] = useState([]);
-
-	//componentDidMount
-	useEffect(() => {
-		fetchData(2000, data, true)
-			.then(() => setDataArray(data))
-			.catch(err => console.log(err))
-	}, [])
-
-	return	(
-		<>
-			{
-				dataArray.map( item => ( <Item key={item.id} {...item}/> ))
-			}
-		</>
-	)
+const ItemList = ({ items }) => {
+	return (
+    <Container>
+      <Row className="my-4 justify-content-center">
+				{
+					items.length ?	items.map( item => ( <Item key={item.id} {...item}/> )) : 'LOADING'
+				}
+      </Row>
+    </Container>
+  )
 }
 
 export default ItemList;
