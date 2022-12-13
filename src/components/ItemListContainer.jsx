@@ -1,8 +1,15 @@
-const ItemListContainer = (props) => {
+// Crea los componentes Item.js e ItemList.js para mostrar algunos productos en tu ItemListContainer.js.
+// Los ítems deben provenir de un llamado a una promise que los resuelva en tiempo diferido (setTimeout) de 2 segundos, para emular retrasos de red
+import { Container, Row } from 'react-bootstrap';
+import ItemList from './ItemList';
+
+const ItemListContainer = () => {
   return (
-    <div className="container m-5">
-     <h1>{props.msg}</h1>  
-    </div>
+    <Container>
+      <Row className="my-4 justify-content-center">
+        <ItemList/>
+      </Row>
+    </Container>
   )
 }
 
