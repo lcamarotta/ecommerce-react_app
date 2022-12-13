@@ -2,13 +2,14 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Item from './Item';
+import LoadingScreen from './LoadingScreen';
 
-const ItemList = ({ items }) => {
+const ItemList = ({ itemsToRender }) => {
 	return (
     <Container>
       <Row className="my-4 justify-content-center">
 				{
-					items.length ?	items.map( item => ( <Item key={item.id} {...item}/> )) : 'LOADING'
+					itemsToRender.length ?	itemsToRender.map( item => ( <Item key={item.id} {...item}/> )) : <LoadingScreen/>
 				}
       </Row>
     </Container>

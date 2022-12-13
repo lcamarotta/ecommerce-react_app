@@ -3,18 +3,26 @@ import ItemList from '../components/ItemList';
 import { data } from '../utils/data';
 import { fetchData } from '../utils/fetchData';
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
-  const [dataArray, setDataArray] = useState([]);
+  const [itemsToRender, setItemsToRender] = useState([]);
+  const { category } = useParams();
 
 	useEffect(() => {
-		fetchData(2000, data, true)
-			.then(() => setDataArray(data))
-			.catch(err => console.log(err))
-	}, [])
+		//select category
+		const dataToFetch = data.filter( item => {
+			if(category) return item.category === category
+			return item }
+		)
+		//simulate backend fetch
+		fetchData(2000, dataToFetch, true)
+				.then(result => setItemsToRender(result))
+				.catch(err => console.log(err))
+	}, [itemsToRender])
 
   return (
-    <ItemList items={ dataArray } />
+    <ItemList itemsToRender={ itemsToRender } />
   )
 }
 

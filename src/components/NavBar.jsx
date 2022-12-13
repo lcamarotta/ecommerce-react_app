@@ -29,18 +29,18 @@ const NavBar = () => {
           <Nav className="ms-4 me-auto align-items-center">
             <Link to="onsale" className='text-decoration-none'>On Sale</Link>
             <NavDropdown title="Search by Use" id="basic-nav-dropdown">
-              <NavDropdown.Item>
+              <div className="dropdown-item">
                 <Link to="/category/work" className='text-decoration-none text-reset'>Work</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
+              </div>
+              <div className="dropdown-item">
                 <Link to="/category/school" className='text-decoration-none text-reset'>School</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
+              </div>
+              <div className="dropdown-item">
                 <Link to="/category/gaming" className='text-decoration-none text-reset'>Gaming</Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item>
+              </div>
+              <div className="dropdown-item">
                 <Link to="/category/everyday" className='text-decoration-none text-reset'>Everyday</Link>
-              </NavDropdown.Item>
+              </div>
             </NavDropdown>
           </Nav>
           <CartWidget/>

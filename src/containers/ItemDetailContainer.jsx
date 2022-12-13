@@ -4,17 +4,20 @@ import { useState, useEffect } from "react";
 import { data } from "../utils/data";
 import { fetchData } from "../utils/fetchData";
 import ItemDetail from "../components/ItemDetail";
+import { useParams } from "react-router-dom";
+import LoadingScreen from "../components/LoadingScreen";
 
 const ItemDetailContainer = () => {
-  const [dataArray, setDataArray] = useState([]);
+  const [itemsToRender, setItemsToRender] = useState([]);
+	const	{ itemId } = useParams();
 
 	useEffect(() => {
 		fetchData(2000, data, true)
-			.then(() => setDataArray(data))
+			.then(result => setItemsToRender(result))
 			.catch(err => console.log(err))
 	}, [])
   return (
-    dataArray.length ?  <ItemDetail {...dataArray[0]} /> : <p>LOADING</p>
+    itemsToRender.length ? <ItemDetail {...itemsToRender[parseInt(itemId)-1]} /> : <LoadingScreen/>
   )
 }
 

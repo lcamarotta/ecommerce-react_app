@@ -31,6 +31,16 @@ $primary: $green;
   align-self: center;
   max-width: 22rem;
 }
+
+.loading-text{
+  display: flex;
+  margin-top: 3rem;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
 nav{
   .brand-text{
     @media screen and (max-width: 576px) {
