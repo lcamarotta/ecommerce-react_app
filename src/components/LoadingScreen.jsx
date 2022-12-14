@@ -1,6 +1,6 @@
-const LoadingScreen = () => {
+const LoadingScreen = ({msg}) => {
   return (
-    <p className="loading-text">LOADING...</p>
+    <p className="loading-text">LOADING... {msg}</p>
   )
 }
 

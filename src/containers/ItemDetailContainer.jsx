@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 import LoadingScreen from "../components/LoadingScreen";
 
 const ItemDetailContainer = () => {
-  const [itemsToRender, setItemsToRender] = useState([]);
+	const [itemsToRender, setItemsToRender] = useState([]);
 	const	{ itemId } = useParams();
 
 	useEffect(() => {
@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
 			.catch(err => console.log(err))
 	}, [])
   return (
-    itemsToRender.length ? <ItemDetail {...itemsToRender[parseInt(itemId)-1]} /> : <LoadingScreen/>
+    itemsToRender.length ? <ItemDetail {...itemsToRender[parseInt(itemId)-1]} /> : <LoadingScreen msg={'ItemDetailContainer'}/>
   )
 }
 
