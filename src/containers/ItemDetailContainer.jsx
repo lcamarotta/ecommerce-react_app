@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
 			.catch(err => console.log(err))
 	}, [])
   return (
-    itemsToRender.length ? <ItemDetail {...itemsToRender[parseInt(itemId)-1]} /> : <LoadingScreen msg={'ItemDetailContainer'}/>
+    itemsToRender.length ? <ItemDetail {...itemsToRender[parseInt(itemId)-1]} /> : <LoadingScreen msg={'Item Details'}/>
   )
 }
 

@@ -2,7 +2,7 @@ import NavBar from "./components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemListContainer from "./containers/ItemListContainer";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
-import TestContainer from "./containers/TestContainer";
+import OnSale from "./components/OnSale";
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       <NavBar/>
       <Routes>
         <Route path="/" element={<ItemListContainer/>} />
-        <Route path="/test" element={<TestContainer/>} />
+        <Route path="/onsale" element={<OnSale/>} />
         <Route path='/category/:category' element={<ItemListContainer />} />
         <Route path="/item/:itemId" element={<ItemDetailContainer/>} />
       </Routes>

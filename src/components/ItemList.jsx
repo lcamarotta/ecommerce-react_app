@@ -9,7 +9,7 @@ const ItemList = ({ itemsToRender }) => {
     <Container>
       <Row className="my-4 justify-content-center">
 				{
-					itemsToRender.length ?	itemsToRender.map( item => ( <Item key={item.id} {...item}/> )) : <LoadingScreen msg={'ItemList'}/>
+					itemsToRender.length ?	itemsToRender.map( item => ( <Item key={item.id} {...item}/> )) : <LoadingScreen msg={'Item List'}/>
 				}
       </Row>
     </Container>

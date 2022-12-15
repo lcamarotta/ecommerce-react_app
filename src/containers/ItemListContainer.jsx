@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = () => {
+	
   const [itemsToRender, setItemsToRender] = useState([]);
   const { category } = useParams();
 
@@ -19,10 +20,14 @@ const ItemListContainer = () => {
 		fetchData(2000, dataToFetch, true)
 				.then(result => setItemsToRender(result))
 				.catch(err => console.log(err))
-	}, [itemsToRender])
+		
+		return( () => {
+			setItemsToRender([])
+		})
+	}, [category])
 
-  return (
-    <ItemList itemsToRender={ itemsToRender } />
+	return (
+		<ItemList itemsToRender={ itemsToRender } />
   )
 }
 
