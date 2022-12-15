@@ -16,7 +16,7 @@ const NavBar = () => {
             <Link to='/'>
               <img
                 alt="website brand"
-                src="/logo.png"
+                src="./logo.png"
                 width="90"
                 height="50"
                 className="d-inline-block align-center"
