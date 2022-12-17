@@ -2,7 +2,7 @@ import React from 'react'
 
 const OnSale = () => {
   return (
-    <p className='loading-text'>We are still working on this page</p>
+    <p className='loading-text'>There aren't any laptops on sale at the moment</p>
   )
 }
 

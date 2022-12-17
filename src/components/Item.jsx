@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 
 const Item = ({ title, price, thumbnail, id }) => {
 	return (
-		<Col>
+		<Col className='justify-content-center d-flex'>
 			<Card style={{ width: '18rem' }} className="mx-1 my-3 text-center">
-				<Card.Img variant="top" src={thumbnail} />
+				<Card.Img style={{ width: '18rem', height: '14rem'}} variant="top" src={thumbnail} />
 				<Card.Body>
-					<Card.Title>{title}</Card.Title>
-					<Card.Text>{price}</Card.Text>
+					<Card.Title style={{ height: '6rem'}}>{title}</Card.Title>
+					<Card.Text>${price}</Card.Text>
 					<Button variant="outline-primary">
 						<Link to={`/item/${id}`} className='text-decoration-none text-reset'>Details</Link>
 					</Button>
