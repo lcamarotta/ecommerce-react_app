@@ -14,9 +14,10 @@ const Item = ({ title, price, thumbnail, id }) => {
 				<Card.Body>
 					<Card.Title style={{ height: '6rem'}}>{title}</Card.Title>
 					<Card.Text>${price}</Card.Text>
-					<Button variant="outline-primary">
-						<Link to={`/item/${id}`} className='text-decoration-none text-reset'>Details</Link>
-					</Button>
+					<Link to={`/item/${id}`} className='text-decoration-none text-reset'>
+						<Button variant="outline-primary">Details</Button>
+					</Link>
+					
 				</Card.Body>
 			</Card>
 		</Col>

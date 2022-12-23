@@ -1,11 +1,15 @@
+import { useContext } from "react";
 import { MdShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
 const CartWidget = () => {
+  const cartCtx = useContext(CartContext);
+
   return (
     <div className="me-5">
       <Link to="/cart" className='text-decoration-none text-reset'>
-        <span className="me-2">0</span>
+        <span className="me-2">{ cartCtx.totalItems() }</span>
         <MdShoppingCart size="2em"/>
       </Link>
     </div>

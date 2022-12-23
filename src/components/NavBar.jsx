@@ -50,8 +50,9 @@ const NavBar = () => {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              disabled
             />
-            <Button variant="outline-primary">Search</Button>
+            <Button disabled variant="outline-primary">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

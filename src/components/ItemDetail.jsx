@@ -36,17 +36,17 @@ const ItemDetail = ( item ) => {
             <Card.Img variant="top" src={ item.thumbnail } />
             <Card.Body>
               <Card.Title>{ item.title }</Card.Title>
-              <Card.Title>{ item.price }</Card.Title>
+              <Card.Title>${ item.price }</Card.Title>
               <Row className='justify-content-center my-3'>
                 <Col sm={10}>
                   <Card.Text>{ item.description }</Card.Text>
                 </Col>
               </Row>
               { checkoutButton
-               ? <Button variant='outline-info'>
-                  <Link to={'/cart'} className='text-decoration-none text-reset'>Checkout</Link>
-                 </Button> 
-               : <ItemCount stock={ item.stock } checkoutReady={ checkoutReady }/>
+               ?  <Link to={'/cart'} className='text-decoration-none text-reset'>
+                    <Button variant='outline-info'>Checkout</Button>
+                  </Link>
+               :  <ItemCount stock={ item.stock } checkoutReady={ checkoutReady }/>
               }
             </Card.Body>
             <Card.Footer className="text-muted">{ item.stock } IN STOCK</Card.Footer>
