@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import { doc, setDoc, serverTimestamp, collection } from "firebase/firestore";
+import { doc, setDoc, serverTimestamp, collection, updateDoc, increment } from "firebase/firestore";
 import { db } from "../utils/firebaseConfig";
 
 export const CartContext = createContext();
@@ -79,6 +79,12 @@ const CartContextProvider = ({ children }) => {
     sendOrder()
       .then(result => {
         setOrderID(result.id)
+        cartList.forEach(async(item) => {
+          const itemRef = doc(db, "products", item.id)
+          await updateDoc(itemRef, {
+            stock: increment(-item.qty)
+          })
+        })
         deleteAll()
       })
       .catch(err => console.log(err))
