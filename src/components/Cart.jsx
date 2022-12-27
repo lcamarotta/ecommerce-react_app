@@ -1,11 +1,11 @@
 import { useContext } from "react"
 import { Button, Card, Col, Container, Row } from "react-bootstrap"
+import { Link } from "react-router-dom"
 import { toast, ToastContainer } from "react-toastify"
 import { CartContext } from "../context/CartContext"
 
 const Cart = () => {
   const cartCtx = useContext(CartContext)
-  
   if(cartCtx.cartList.length === 0) {
     return (
       <Container>
@@ -22,10 +22,28 @@ const Cart = () => {
         pauseOnHover
         theme="colored"
         />  
+        <Link to='/' className='text-decoration-none  justify-content-center d-flex'>
+						<Button variant="primary">Go Home</Button>
+				</Link>
       </Container>
     )
   }
   
+  const checkout = () => {
+    cartCtx.checkout()
+      toast.success(`Order ${cartCtx.orderID} sent`, {
+        position: "top-right",
+        autoClose: 15000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      return
+  }
+
   const remove = (itemToDelete) => {
     if (itemToDelete === 'all'){
       cartCtx.deleteAll()
@@ -92,6 +110,7 @@ const Cart = () => {
         }
           <Card className="mx-1 my-3">
             <Card.Title className="text-end mx-4 my-3">Total amount: ${cartCtx.totalPrice()} </Card.Title>
+            <Button className="my-2 mx-5" variant="success" onClick={() => checkout()}>Send Order</Button>
             <Button className="my-2 mx-5" variant="outline-danger" onClick={() => remove('all')}>Remove all items</Button>
           </Card>
         </Col>
