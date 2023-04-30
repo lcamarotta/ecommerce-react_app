@@ -1,6 +1,6 @@
 # 🛍️  E-commerce React SPA
 
-#### This is an e-commerce Single Page Application proyect I made using ReactJS with Vite.
+#### This is an e-commerce Single Page Application project I made using ReactJS with Vite.
 It renders cards with fake data pulled from a firestore database and lets the user simulate a buying process. \
 When 'Send Order' is pressed it generates a document in the database with the items that were on the cart.
 
